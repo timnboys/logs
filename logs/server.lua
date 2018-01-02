@@ -165,8 +165,12 @@ function getFileContent(fileDir)
   local file = io.open(fileDir, "rb")
 
    if(file) then
-      for line in file:lines() do 
-        linesContent[#linesContent+1] = line
+      local testIfFileExists = file:read()
+
+      if(testIfFileExists ~= nil) then
+        for line in file:lines() do 
+          linesContent[#linesContent+1] = line
+        end
       end
    end
    file:close()
