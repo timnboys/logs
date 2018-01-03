@@ -162,7 +162,7 @@ function getFileContent(fileDir)
   local linesContent = {}
 
 
-  local file = io.open(fileDir, "rb")
+  local file = io.open(fileDir, "a")
 
    if(file) then
       local testIfFileExists = file:read()
